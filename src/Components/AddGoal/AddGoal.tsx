@@ -22,8 +22,9 @@ const AddGoal = ({onAdd}: AddGoalProps) => {
         onAdd(addedGoal, addedDesc)
     }
     return (
-        <div>
-            <form className="card-body w-3/4" onSubmit={addGoalForm}>
+        <div className="flex flex-col justify-center items-center border-yellow-800 border-2 m-2 p-2">
+            <h1 className="text-xl md:text-2xl uppercase font-semibold">Add Your Course Goals</h1>
+            <form className="card-body w-full" onSubmit={addGoalForm}>
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">Goal</span>
@@ -37,8 +38,8 @@ const AddGoal = ({onAdd}: AddGoalProps) => {
                     <input type="text" placeholder="Description" name="description" ref={desc} className="input input-bordered" />
 
                 </div>
-                <div className="form-control mt-6">
-                    <button className="btn btn-primary btn-md">Submit</button>
+                <div className="mt-6">
+                    <button className="btn  btn-md">Submit</button>
                 </div>
             </form>
         </div>

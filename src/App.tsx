@@ -13,7 +13,7 @@ type Goal = {
 function App() {
   const [goal, setGoal] = useState<Goal[]>([])
 
-  const handleAddGoals = (goal : string, description: string) => {
+  const handleAddGoals = (goal: string, description: string) => {
     setGoal(prev => {
       const newGoal = {
         title: goal,
@@ -31,7 +31,7 @@ function App() {
   }
 
   return (
-    <div >
+    <div className="container mx-auto " >
       <div>
         <Header />
       </div>
@@ -39,7 +39,7 @@ function App() {
         <AddGoal onAdd={handleAddGoals}></AddGoal>
       </div>
 
-      <div>
+      <div className=" grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
         {goal.map((element, indx) => (
           <Goal key={indx} title={element.title} description={element.description} id={element.id} onDelete={handleDelete} />
         ))}
